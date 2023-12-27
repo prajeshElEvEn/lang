@@ -6,7 +6,6 @@ class Node
 public:
     int data;
     Node *next;
-
     Node(int data)
     {
         this->data = data;
@@ -14,7 +13,21 @@ public:
     }
 };
 
-void insert(Node *&head, int data)
+void insert(Node *&head, int pos, int data)
+{
+    Node *temp = head;
+    int count = 1;
+    while (count < pos - 1)
+    {
+        temp = temp->next;
+        count++;
+    }
+    Node *newNode = new Node(data);
+    newNode->next = temp->next;
+    temp->next = newNode;
+}
+
+void insertHead(Node *&head, int data)
 {
     Node *temp = new Node(data);
     temp->next = head;
@@ -34,17 +47,13 @@ void print(Node *&head)
 
 int main()
 {
-    // create a node
     Node *node1 = new Node(10);
-
-    // create head and assign first node to it
     Node *head = node1;
+    insertHead(head, 11);
+    insertHead(head, 12);
+    insertHead(head, 13);
     print(head);
-
-    insert(head, 11);
+    insert(head, 2, 20);
     print(head);
-    insert(head, 12);
-    print(head);
-
     return 0;
 }

@@ -14,11 +14,11 @@ public:
     }
 };
 
-void insert(Node *&head, int data)
+void insert(Node *&tail, int data)
 {
     Node *temp = new Node(data);
-    temp->next = head;
-    head = temp;
+    tail->next = temp;
+    tail = temp;
 }
 
 void print(Node *&head)
@@ -34,17 +34,13 @@ void print(Node *&head)
 
 int main()
 {
-    // create a node
     Node *node1 = new Node(10);
-
-    // create head and assign first node to it
     Node *head = node1;
+    Node *tail = node1;
     print(head);
-
-    insert(head, 11);
+    insert(tail, 11);
     print(head);
-    insert(head, 12);
+    insert(tail, 12);
     print(head);
-
     return 0;
 }
