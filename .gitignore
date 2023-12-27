@@ -491,3 +491,13 @@ dmypy.json
 cython_debug/
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#C,Go,C++,Ruby,Rust,Java,Node,Perl,Python
+
+# Zig programming language
+
+zig-cache/
+zig-out/
+build/
+build-*/
+docgen_tmp/
+
+# End of https://mrkandreev.name/snippets/gitignore-generator/#zig
