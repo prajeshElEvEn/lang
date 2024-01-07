@@ -29,40 +29,33 @@ node *build_tree(node *root)
     return root;
 }
 
-void level_order_traversal(node *root)
+void reverse_level_order_traversal(node *root)
 {
     if (root == NULL)
     {
         return;
     }
     queue<node *> q;
+    stack<int> s;
     q.push(root);
-    q.push(NULL);
-
     while (!q.empty())
     {
         node *temp = q.front();
         q.pop();
-        if (temp == NULL)
+        s.push(temp->data);
+        if (temp->right)
         {
-            cout << endl;
-            if (!q.empty())
-            {
-                q.push(NULL);
-            }
+            q.push(temp->right);
         }
-        else
+        if (temp->left)
         {
-            cout << temp->data << " ";
-            if (temp->left)
-            {
-                q.push(temp->left);
-            }
-            if (temp->right)
-            {
-                q.push(temp->right);
-            }
+            q.push(temp->left);
         }
+    }
+    while (!s.empty())
+    {
+        cout << s.top() << " ";
+        s.pop();
     }
 }
 
@@ -71,6 +64,6 @@ int main()
     node *root = NULL;
     root = build_tree(root);
 
-    level_order_traversal(root);
+    reverse_level_order_traversal(root);
     return 0;
 }
