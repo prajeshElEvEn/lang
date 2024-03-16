@@ -7,6 +7,7 @@ struct Person
     int age;
 };
 
+// union cannot contain string
 union Car
 {
     char initials;
