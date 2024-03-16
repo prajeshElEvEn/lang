@@ -66,6 +66,14 @@ void ops(int a = 5, int b = 4, int op = 1)
     case 20:
         cout << (a >> b) << endl;
         break;
+    case 21:
+        cout << a++ << endl;
+        cout << ++a << endl;
+        break;
+    case 22:
+        cout << a-- << endl;
+        cout << --a << endl;
+        break;
 
     default:
         break;
@@ -77,7 +85,7 @@ int main()
     int choice;
     do
     {
-        cout << "1. +\n2. -\n3. *\n4. /\n5. %\n6. ==\n7. !=\n8. <\n9. >\n10. >=\n11. <=\n12. &&\n13. ||\n14. !\n15. &\n16. |\n17. ^\n18. ~\n19. <<\n20. >>\n"
+        cout << "1. +\n2. -\n3. *\n4. /\n5. %\n6. ==\n7. !=\n8. <\n9. >\n10. >=\n11. <=\n12. &&\n13. ||\n14. !\n15. &\n16. |\n17. ^\n18. ~\n19. <<\n20. >>\n21. ++\n22. --\n"
              << endl;
         cout << "> ";
         cin >> choice;

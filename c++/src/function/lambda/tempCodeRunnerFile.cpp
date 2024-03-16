@@ -1,0 +1,1 @@
+multipyByThree(5)
