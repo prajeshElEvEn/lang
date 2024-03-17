@@ -1,20 +1,18 @@
 #include <iostream>
 using namespace std;
 
-void swapp(int &a, int &b)
-{
-    int temp = b;
-    b = a;
-    a = temp;
-}
-
 int main()
 {
-    int x, y;
-    cin >> x >> y;
-    cout << x << " " << y;
-    cout << endl;
-    swapp(x, y);
-    cout << x << " " << y;
+    int i = 9;
+    int *p = &i;
+    cout << p << endl;
+    cout << *p << endl;
+
+    int &r = i;
+    cout << r << endl;
+    r = 7;
+    cout << i << endl;
+    cout << r << endl;
+    cout << *p << endl;
     return 0;
 }
